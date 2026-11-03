@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campus Admin Pro - SWYNEX Task 2</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="phone">
+<div class="header"><span>🏫 Campus Admin Pro</span><span>🔔 👤</span></div>
+
+<!-- 1. LOGIN -->
+<section id="screen-login" class="screen active">
+<h1>Welcome Back!</h1><p class="sub">Sign in to continue</p>
+<input type="email" id="email" placeholder="Email - admin@campus.edu" value="admin@campus.edu">
+<input type="password" id="password" placeholder="Password" value="123456">
+<button class="btn" onclick="login()">Login</button>
+<p class="center small">Forgot Password? | Demo: any email works</p>
+<p class="center small">Intern ID: SWX-2026-003335 | Priyadarshini</p>
+</section>
+
+<!-- 2. DASHBOARD -->
+<section id="screen-dashboard" class="screen">
+<h1>Hello, Admin 👋</h1><p class="sub">Here is your overview today</p>
+<div class="grid2">
+<div class="card" onclick="showScreen('students')"><div>👥</div><b>Students</b><h2>1,240</h2><span class="green">+42 this month</span></div>
+<div class="card" onclick="showScreen('fees')"><div>💰</div><b>Fees Pending</b><h2>$8,320</h2><span class="red">-12% last month</span></div>
+<div class="card" onclick="showScreen('inquiries')"><div>💬</div><b>Inquiries</b><h2>32</h2><span>5 new today</span></div>
+<div class="card" onclick="showScreen('reports')"><div>✅</div><b>Attendance</b><h2>92%</h2><span class="green">+3% this week</span></div>
+</div>
+<div class="info">📌 Today's Task: Call 5 new parents for admission follow-up</div>
+</section>
+
+<!-- 3. STUDENTS -->
+<section id="screen-students" class="screen">
+<h1>Student List</h1>
+<input type="text" id="search" placeholder="🔍 Search students..." onkeyup="filterStudents()">
+<div id="studentList">
+<div class="row"><span class="avatar">SK</span><div><b>Sarah Khan</b><br><small>Grade 10 • Active</small></div><span class="chip green-bg">Enrolled</span></div>
+<div class="row"><span class="avatar">MJ</span><div><b>Mohammed Jamal</b><br><small>Grade 8 • Active</small></div><span class="chip green-bg">Enrolled</span></div>
+<div class="row"><span class="avatar">RL</span><div><b>Riya Lopez</b><br><small>Grade 12 • On Leave</small></div><span class="chip orange-bg">On Leave</span></div>
+<div class="row"><span class="avatar">DL</span><div><b>David Lee</b><br><small>Grade 9 • Active</small></div><span class="chip green-bg">Enrolled</span></div>
+</div>
+<button class="btn-outline" onclick="addStudent()">+ Add Student</button>
+<p class="center small">Showing 4 of 1240 students</p>
+</section>
+
+<!-- 4. FEES -->
+<section id="screen-fees" class="screen">
+<h1>Fee Tracker</h1>
+<div class="grid3">
+<div class="mini green-text"><b>Paid</b><h3>$24,100</h3></div>
+<div class="mini orange-text"><b>Pending</b><h3>$8,320</h3></div>
+<div class="mini red-text"><b>Overdue</b><h3>$2,100</h3></div>
+</div>
+<h3>Recent Payments</h3>
+<div class="row"><div><b>Sarah Khan</b><br><small>Invoice #1024 • Grade 10</small></div><b>$1,200</b><span class="chip green-bg">Paid</span></div>
+<div class="row"><div><b>Mohammed Jamal</b><br><small>Invoice #0987 • Grade 8</small></div><b>$1,200</b><span class="chip orange-bg">Pending</span></div>
+<div class="row"><div><b>David Lee</b><br><small>Invoice #0956 • Grade 9</small></div><b>$900</b><span class="chip red-bg">Overdue</span></div>
+<button class="btn" onclick="markPaid()">Mark Selected as Paid</button>
+</section>
+
+<!-- 5. INQUIRIES -->
+<section id="screen-inquiries" class="screen">
+<h1>Inquiry Log</h1>
+<div class="tabs"><button class="tab active" onclick="filterInquiry('all',this)">All</button><button class="tab" onclick="filterInquiry('new',this)">New</button><button class="tab" onclick="filterInquiry('closed',this)">Closed</button></div>
+<div class="i…
